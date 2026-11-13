@@ -1,0 +1,61 @@
+/*
+ * Design tokens. Every text/background pair below is chosen for readable
+ * contrast in both light and dark mode (no white-on-white surprises).
+ */
+:root {
+  --bg: #f7f7f8;
+  --surface: #ffffff;
+  --text: #18181b;
+  --muted: #6b6b76;
+  --border: #e4e4e7;
+
+  --accent: #4f46e5;
+  --accent-text: #ffffff;
+  --ring: rgba(79, 70, 229, 0.25);
+
+  --ok: #16a34a;
+  --ok-text: #166534;
+  --danger: #dc2626;
+  --danger-text: #991b1b;
+  --danger-bg: #fef2f2;
+  --danger-border: #fecaca;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f12;
+    --surface: #1a1a1f;
+    --text: #f4f4f5;
+    --muted: #a1a1aa;
+    --border: #2e2e35;
+
+    --accent: #6366f1;
+    --accent-text: #ffffff;
+    --ring: rgba(99, 102, 241, 0.35);
+
+    --ok: #22c55e;
+    --ok-text: #86efac;
+    --danger: #ef4444;
+    --danger-text: #fca5a5;
+    --danger-bg: #2a1215;
+    --danger-border: #5c1d22;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
