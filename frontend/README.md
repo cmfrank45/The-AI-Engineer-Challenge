@@ -57,7 +57,8 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 
 With **Root Directory** set to `frontend`, Vercel only builds this folder. The Python backend in `/api` **is not included**, and the root `vercel.json` is ignored. So you run two Vercel projects from the same repo:
 
-1. **Backend project** (Root Directory = repo root): this is the full-repo deploy from the [main README](../README.md). Add your `LLM_PROVIDER` and API key env vars there. Check that `https://<backend>.vercel.app/api/health` returns `{"status":"ok"}`.
+1. **Backend project** (Root Directory = repo root): run `npx vercel --prod` from the repo root. The root [`vercel.json`](../vercel.json) builds **only** the FastAPI app. The frontend lives in its own project, and the old legacy Next.js builder failed with Next 16. Add your `LLM_PROVIDER` and API key env vars there. Check that `https://<backend>.vercel.app/api/health` returns `{"status":"ok"}`.
+   - 🕵️ Get your real domain from the Vercel dashboard (Project → Domains). Vercel adds a suffix like `-bay` when the plain name is taken, and the plain name may belong to someone else's app!
 2. **Frontend project** (Root Directory = `frontend`):
    - Vercel → **Add New… → Project** → import this repo
    - **Root Directory** → `frontend` (Framework Preset auto-detects **Next.js**)
